@@ -21,6 +21,7 @@
 
 <!-- Screenshot ![TodoApp-React](todoapp.gif) -->
 
+HOW IT WORKS - HOW WE DID IT?
 
 1- Json server ile kendi apini oluşturduğundan projejyi her açtığında;
 önce npm run server ile server'i sonra npm run dev ile projeyi ayağa kaldırmalısın

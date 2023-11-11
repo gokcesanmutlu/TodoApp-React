@@ -5,14 +5,10 @@ import { useRef, useState } from "react";
 
 const ListItem = ({ setTodos, todo }) => {
   const [isEditMode, setIsEditMode] = useState();
-  //ref değeri tanımlanan elemanlara erişme
+ 
   const titleRef = useRef();
   const selectRef = useRef();
-
-
-  //console.log(titleRef.current)
-  //current değeri oluyo genelde ona erişmeliyiz. Current değeri seçtiğimiz elemana denk gelir. 
-  //bir nevi e.target gibi
+  //console.log(titleRef.current) Current değeri seçtiğimiz elemana denk gelir. Bir nevi e.target gibi
 
   //! Silme işlemi
   const handleDelete = () => {
@@ -51,7 +47,7 @@ const ListItem = ({ setTodos, todo }) => {
 
   return (
     <li className="relative py-4 px-3 list-group-item d-flex justify-content-between align-items-center">
-      {/*durum alanı */}
+      {/*checked area */}
       <div>
         {/* checked ile todonon check değerini isdone'a bağladık. Tamamlandıysa otomatik tikli geliyo */}
         {/* default checked vs checked. checked'da sabit değer gelir değiştiremem. anca json serverdaki veri

@@ -1,9 +1,8 @@
 import axios from "axios";
 import { v4 } from "uuid";
 
-
 const Form = ({ setTodos, todos, totalCount, maxPage, setPage, params }) => {
-  //when we send all form, page will refresh. For prevent this;
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     //console.dir(e.target) yaz buraya, sonra todoliste bir şeyler gönder.
@@ -12,7 +11,6 @@ const Form = ({ setTodos, todos, totalCount, maxPage, setPage, params }) => {
     const title = e.target[0].value;
     const status = e.target[1].value;
 
-    //Verileri kontrol etme
     if (!title) {
       return alert('Please, fill the blanks')
     }

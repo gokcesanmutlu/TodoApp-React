@@ -4,7 +4,6 @@ import ListItem from "./components/ListItem";
 import axios from 'axios';
 import Loading from "./components/Loading";
 
-
 function App() {
    const [todos, setTodos] = useState(null);
    const [page, setPage] = useState(1);
@@ -30,7 +29,6 @@ function App() {
             const count = Number(res.headers['x-total-count']);
             setMaxPage(Math.ceil(count / params._limit));
             setTotalCount(count);
-
             setTodos(res.data);
          });
    }, [page]);
@@ -49,8 +47,7 @@ function App() {
             {/* veriler henüz gelmediyse */}
             {!todos && <Loading />}
 
-            {/* Optional chaining?             
-             normal parantez ok fonksiyonunda doğrudan return eden kullanımdı, 
+            {/* normal parantez ok fonksiyonunda doğrudan return eden kullanımdı, 
              süslü kullansak ayrıca return gerekirdi
              bir de hiç parantez açılmayan yöntem var- böyle dört kullanımı var araştır?*/}
             {todos?.map((todo) => (<ListItem key={todo.id} todo={todo} setTodos={setTodos} />))}

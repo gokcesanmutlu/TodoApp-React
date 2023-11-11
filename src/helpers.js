@@ -6,6 +6,7 @@ export const formatDate = (dateStr) => {
     // console.log(date)
 
     // ayları dizi şeklinde tuttuğundan doğru aya ulaşabilmek için +1 yapıyoruz
+    
     // formatlayıp geri döndürme
     return date.getDate() + "/" + (date.getMonth() + 1);
     // ikinci kısmı paranteze almazsak monthu string olarak algılayıp yanına bir koyuyo toplamıyor

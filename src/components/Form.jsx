@@ -2,7 +2,7 @@ import axios from "axios";
 import { v4 } from "uuid";
 
 const Form = ({ setTodos, todos, totalCount, maxPage, setPage, params }) => {
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     //console.dir(e.target) yaz buraya, sonra todoliste bir şeyler gönder.
@@ -32,7 +32,7 @@ const Form = ({ setTodos, todos, totalCount, maxPage, setPage, params }) => {
       .then(() => {
         if (todos.length === params._limit) {//8
           // eğer ki son sayfa doluysa bir fazlasına yönlendir.
-          setPage(totalCount % params._limit === 0 ? maxPage + 1 : maxPage);
+          setPage(totalCount % params._limit === 0 ? (maxPage + 1) : maxPage);
           return;
         }
         // set methodu fonksiyona param olarak statein son halini gönderir
@@ -41,6 +41,8 @@ const Form = ({ setTodos, todos, totalCount, maxPage, setPage, params }) => {
     //settodos'u param olarak gönderdiysek de todos'u param olarak göndermedik ama setTodos'un bir olayı var
     //param olarak fonk alabiliyor ve aldığı bu fonk'da çalıştığı anda daha önceki todos'lara 
     //erişmemizi sağlıyor. bu bütün set metotlarının kabiliyeti
+    e.target[0].value = " ";
+    e.target[1].value = "daily";
   }
 
   return (
